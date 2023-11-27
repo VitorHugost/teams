@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Loading } from '@components/Loading';
+import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto';
+import { ThemeProvider } from 'styled-components';
+import { NewGroup } from './src/screens/NewGroup';
+import theme from './src/theme';
+import { StatusBar } from 'react-native';
 
 export default function App() {
+  const [fontload] = useFonts({ Roboto_400Regular, Roboto_700Bold })
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      <StatusBar
+      barStyle='light-content'
+      translucent
+      backgroundColor='transparent'
+      />
+      {fontload ? <NewGroup /> : <Loading/>}
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
