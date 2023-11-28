@@ -20,6 +20,7 @@ export function Groups() {
           keyExtractor={msg => msg}
           renderItem={({ item }) => (<GroupCard title={item} />)}
           ListEmptyComponent={<ListEmpty message='Que tal cadastrar a priomeira turma ?' />}
+          showsVerticalScrollIndicator={false}
         />
       <Button title='Criar nova turma'></Button>
       </S.Container>

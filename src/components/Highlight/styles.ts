@@ -1,22 +1,26 @@
-import theme from "@theme/index";
+import { ThemeType, css } from "styled-components";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
-width: 100%;
-margin: 32px 0;
+    width: 100%;
+    margin: 32px 0;
 
 `;
 
 export const Title = styled.Text`
-text-align: center;
-font-size: ${theme.FONT_SIZE.XL}px;
-font-family:${theme.FONT_FAMILY.BOLD};
-color: ${theme.COLORS.WHITE};
-margin-bottom: 6px;
+${({ theme }: { theme: ThemeType }) => css`
+    font-size: ${theme.FONT_SIZE.XL}px;
+    font-family:${theme.FONT_FAMILY.BOLD};
+    color: ${theme.COLORS.WHITE};
+    text-align: center;
+    margin-bottom: 6px;
+`}
 `
 export const Subtitle = styled.Text`
-text-align: center;
-font-size: ${theme.FONT_SIZE.MD}px;
-font-family:${theme.FONT_FAMILY.REGULAR};
-color: ${theme.COLORS.GRAY_300};
+${({ theme }: { theme: ThemeType }) => css`
+    text-align: center;
+    font-size: ${theme.FONT_SIZE.MD}px;
+    font-family:${theme.FONT_FAMILY.REGULAR};
+    color: ${theme.COLORS.GRAY_300};
+`}
 ` 
