@@ -1,11 +1,11 @@
-import { ThemeType } from "styled-components";
 import styled from "styled-components/native";
+import { SafeAreaView} from 'react-native-safe-area-context'
+import { ThemeProps } from 'styled-components/native';
 
-
-export const Container = styled.View`
+export const Container = styled(SafeAreaView)`
     flex:1;
-    background-color:${({theme}:{theme:ThemeType}) => theme.COLORS.GRAY_600} ;
-    padding: 14px;
+    background-color:${({theme}:{theme:ThemeProps}) => theme.COLORS.GRAY_600} ;
+    padding: 10px;
 `
 
 export const Title = styled.Text`

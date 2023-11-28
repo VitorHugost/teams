@@ -1,4 +1,4 @@
-import { ThemeType, css } from "styled-components";
+import { css } from "styled-components/native";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
@@ -8,7 +8,7 @@ export const Container = styled.View`
 `
 export const Message = styled.Text`
 
-${({theme}:{theme:ThemeType}) => css`
+${({theme}) => css`
     text-align: center;
     font-size: ${theme.FONT_SIZE.SM}px;
     font-family: ${theme.FONT_FAMILY.REGULAR};

@@ -1,15 +1,14 @@
 import { TouchableOpacity } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-import { ThemeType, css } from "styled-components";
+import { css } from "styled-components/native";
 import styled from "styled-components/native";
 
 export type FilterStyleProps = {
     isActive?: boolean;
-    theme?: ThemeType
 }
 
 export const Container = styled(TouchableOpacity)<FilterStyleProps>`
-    ${({ theme, isActive }: FilterStyleProps) => isActive && css`
+    ${({ theme, isActive }) => isActive && css`
     border: 1px solid ${theme!.COLORS.GREEN_700};
     `};
     border-radius:4px;
@@ -23,7 +22,7 @@ export const Container = styled(TouchableOpacity)<FilterStyleProps>`
     `;
 
 export const Title = styled.Text`
-    ${({ theme }:{theme:ThemeType}) => css`
+    ${({ theme }) => css`
         font-family: ${theme.FONT_FAMILY.BOLD};
         font-size: ${theme.FONT_SIZE.SM}px;
         color:${theme.COLORS.WHITE};

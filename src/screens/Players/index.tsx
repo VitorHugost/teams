@@ -1,17 +1,24 @@
+import { useState } from "react";
+import { FlatList } from "react-native";
+import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
+import {useRoute} from '@react-navigation/native'
+
 import { Header } from "@components/Header";
-import { Container, Form, HeaderList, NumbersOfPlayers } from "./styles";
 import { Highlight } from "@components/Highlight";
 import { ButtonIcon } from "@components/ButtonIcon";
 import { InputText } from "@components/InputText";
-import { FlatList } from "react-native";
 import { Filter } from "@components/Filter";
-import { useState } from "react";
 import { PlayerCard } from "@components/PlayerCard";
 import { ListEmpty } from "@components/ListEmpty";
 import { Button } from "@components/Button";
 
-export function Players() {
+type Props = {
+    groups:string
+}
 
+export function Players() {
+    const {params} = useRoute()
+    const {groups} = params as Props
     const [team, setTeam] = useState('Time A')
     const [players, setPlayers] = useState(['Vitor'])
 
@@ -19,7 +26,7 @@ export function Players() {
         <Container>
             <Header showBackButton />
             <Highlight
-                title="Nome da turma"
+                title={groups}
                 subTitle="Adicione a galera e sepere os times"
             />
 
@@ -41,9 +48,9 @@ export function Players() {
                     )}
                     horizontal
                 />
-                <NumbersOfPlayers>
+                <NumberOfPlayers>
                     {players.length}
-                </NumbersOfPlayers>
+                </NumberOfPlayers>
             </HeaderList>
 
             <FlatList

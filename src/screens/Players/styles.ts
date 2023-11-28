@@ -1,14 +1,16 @@
-import { ThemeType, css } from "styled-components";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
+import { SafeAreaView} from 'react-native-safe-area-context'
+import { ThemeProps } from 'styled-components/native';
 
-export const Container = styled.View`
+
+export const Container = styled(SafeAreaView)`
     flex:1;
-    background-color: ${({theme}:{theme:ThemeType})=> theme.COLORS.GRAY_600};
-    padding: 14px;
+    background-color: ${({theme}:{theme:ThemeProps})=> theme.COLORS.GRAY_600};
+    padding: 10px;
 `
 export const Form = styled.View`
     width:100%;
-    background-color: ${({theme}:{theme:ThemeType})=> theme.COLORS.GRAY_700};
+    background-color: ${({theme}:{theme:ThemeProps})=> theme.COLORS.GRAY_700};
     flex-direction: row;
 `
 
@@ -19,8 +21,8 @@ export const HeaderList = styled.View`
     margin: 32px 0 12px ;
 `
 
-export const NumbersOfPlayers = styled.Text`
-    ${({theme}:{theme:ThemeType}) => css`
+export const NumberOfPlayers = styled.Text`
+    ${({theme}:{theme:ThemeProps}) => css`
         color:${theme.COLORS.GRAY_200};
         font-family:${theme.FONT_FAMILY.BOLD};
         font-size:${theme.FONT_SIZE.SM}px;

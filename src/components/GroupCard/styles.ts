@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components/native";
 import { TouchableOpacity } from "react-native";
 import theme from "@theme/index";
-import { ThemeType } from "styled-components";
 
 export const Container = styled(TouchableOpacity)`
 width: 90%;
@@ -17,7 +16,7 @@ gap: 14px;
 `
 
 export const Title = styled.Text`
-${({theme}:{theme:ThemeType}) => css`
+${({theme}) => css`
     font-size: ${theme.FONT_SIZE.MD}px;
     color:${theme.COLORS.GRAY_200};
     font-family:${theme.FONT_FAMILY.REGULAR};
