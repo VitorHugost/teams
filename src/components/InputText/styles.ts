@@ -1,9 +1,10 @@
 import styled from "styled-components/native";
 import { TextInput } from 'react-native'
 import { css } from "styled-components/native";
+import { ThemeProps } from "styled-components/native";
 
 export const Container = styled(TextInput)`
-${({ theme }) => css`
+${({ theme }:{theme:ThemeProps}) => css`
 
     background-color: ${theme.COLORS.GRAY_700};
     font-family: ${theme.FONT_FAMILY.REGULAR};

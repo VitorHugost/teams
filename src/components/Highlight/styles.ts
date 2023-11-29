@@ -1,3 +1,4 @@
+import { ThemeProps } from "styled-components/native";
 import {css } from "styled-components/native";
 import styled from "styled-components/native";
 
@@ -8,7 +9,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-${({ theme }) => css`
+${({ theme }:{theme:ThemeProps}) => css`
     font-size: ${theme.FONT_SIZE.XL}px;
     font-family:${theme.FONT_FAMILY.BOLD};
     color: ${theme.COLORS.WHITE};
@@ -17,7 +18,7 @@ ${({ theme }) => css`
 `}
 `
 export const Subtitle = styled.Text`
-${({ theme }) => css`
+${({ theme }:{theme:ThemeProps}) => css`
     text-align: center;
     font-size: ${theme.FONT_SIZE.MD}px;
     font-family:${theme.FONT_FAMILY.REGULAR};

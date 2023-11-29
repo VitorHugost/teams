@@ -4,12 +4,12 @@ import Users from '@assets/IconCard.png'
 
 
 type Props = TouchableOpacityProps & {
-    title:string
+    title:string;
 }
 
-export function GroupCard({title}:Props){
+export function GroupCard({title, ...rest}:Props){
     return(
-        <Container>
+        <Container {...rest}>
             <Icon source={Users}/>
             <Title>{title}</Title>
         </Container>
