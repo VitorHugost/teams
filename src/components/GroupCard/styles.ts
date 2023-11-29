@@ -4,14 +4,14 @@ import theme from "@theme/index";
 import { ThemeProps } from "styled-components/native";
 
 export const Container = styled(TouchableOpacity)`
-width: 100%;
+flex:1;
 height: 90px;
 background-color: ${theme.COLORS.GRAY_500};
 border-radius: 6px;
 flex-direction: row;
 align-items: center;
 padding: 24px;
-margin-left:10px;
+margin-left:5px;
 margin-bottom: 12px;
 gap: 14px;
 `
