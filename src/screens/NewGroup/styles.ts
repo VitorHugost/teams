@@ -15,8 +15,5 @@ export const Content = styled.View`
 
 export const IconNewGroup = styled.Image`
     padding: 26px;
-    color: ${theme.COLORS.GREEN_700};
     align-self: center
 `
-
-
