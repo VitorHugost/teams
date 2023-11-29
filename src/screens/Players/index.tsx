@@ -101,7 +101,7 @@ export function Players() {
     }
 
     function handleRemoveGroup() {
-        Alert.alert("Romover", "Deseja remove esse grupó ?", [
+        Alert.alert("Romover", "Deseja remove esse grupo ?", [
             { text: "Não", style: 'cancel' },
             { text: "Sim", onPress: () => groupRemove() }
         ])
